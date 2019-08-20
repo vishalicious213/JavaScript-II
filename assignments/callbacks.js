@@ -68,8 +68,15 @@ console.log(lastItem);
 //---------------------------------------------------------------------------------------
 
 function sumNums(x, y, cb) {
+  return cb(x+y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
+
+const addThese = sumNums(1, 2, sum => `The sum is ${sum}`);
+
+console.log(addThese);
+
+//---------------------------------------------------------------------------------------
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
