@@ -40,8 +40,20 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  return cb(arr.length);
   // getLength passes the length of the array into the callback.
 }
+
+const backPack = getLength(items, itemTotal => `There are ${itemTotal} school supplies`);
+
+console.log(backPack);
+
+// let testLength = function getLength(items, itemsLength) {
+//   console.log("hello");
+//   console.log(itemsLength);
+// };
+// console.log(testLength);
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
