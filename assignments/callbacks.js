@@ -79,8 +79,15 @@ console.log(addThese);
 //---------------------------------------------------------------------------------------
 
 function multiplyNums(x, y, cb) {
+  return cb(x*y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+
+const multiplyThese = multiplyNums(3, 6, prod => `The product is ${prod}`);
+
+console.log(multiplyThese);
+
+//---------------------------------------------------------------------------------------
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
