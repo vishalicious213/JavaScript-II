@@ -37,7 +37,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   const test2 = firstItem(items, logExorbitantPrice);
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
-//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 function getLength(arr, cb) {
   return cb(arr.length);
@@ -54,7 +54,7 @@ console.log(backPack);
 // };
 // console.log(testLength);
 
-//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 function last(arr, cb) {
   return cb(arr[arr.length-1]);
@@ -65,7 +65,7 @@ const lastItem = last(items, lastOne => `The last item is ${lastOne}`);
 
 console.log(lastItem);
 
-//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 function sumNums(x, y, cb) {
   return cb(x+y);
@@ -76,7 +76,7 @@ const addThese = sumNums(1, 2, sum => `The sum is ${sum}`);
 
 console.log(addThese);
 
-//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 function multiplyNums(x, y, cb) {
   return cb(x*y);
@@ -87,25 +87,33 @@ const multiplyThese = multiplyNums(3, 6, prod => `The product is ${prod}`);
 
 console.log(multiplyThese);
 
-//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 function contains(item, list, cb) {
-  items.forEach(function(item) {
-    console.log(item);
-  })
+  // v1
+  // items.forEach(function(item) {
+  //   console.log(item);
+  // })
+  // v2
+let returnItem = list.includes(item);
+  cb(returnItem);
+}
   
 // items.forEach() if item == 
-
+const checkItem = (result) => {
+  console.log(result);
+};
+contains("Pencil", items, checkItem);
 
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   // item = item from array,  list = array,  cb = true/false
-}
 
 
 //console.log(if TRUE, item is present)
 //console.log(if FALSE, that item is not present)
 
+//----------------------------------------------------------------------
 
 /* STRETCH PROBLEM */
 

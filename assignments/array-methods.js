@@ -122,12 +122,14 @@ let ticketPriceTotal = 0;
 
 // use "donation" variable. .reduce iterates over each item in array
 
-ticketPriceTotal = runners.reduce(function(count, runner) {
+ticketPriceTotal = runners.reduce((acc, runner) => {
   // console.log(runner.donation); test
-  ticketPriceTotal = ticketPriceTotal + runner.donation;
-  return ticketPriceTotal;
-  
-});
+  // v1
+  // ticketPriceTotal = ticketPriceTotal + runner.donation;
+  // return ticketPriceTotal;
+  // v2
+  return acc+runner.donation;
+},0);
 
 console.log(ticketPriceTotal);
 
