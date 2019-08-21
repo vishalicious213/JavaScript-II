@@ -70,14 +70,14 @@ runners.forEach(function(runner){
 
 console.log(fullNames);
 
-//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
 
-// map runs on every element in array
+// .map runs on every element in array
 // oldarray.map to newarray.first_name (make uppercase with function)
 // NEEDS RETURN STATEMENT!!
 
@@ -89,13 +89,32 @@ firstNamesAllCaps = runners.map(function(runner){
 
 console.log(firstNamesAllCaps);
 
-//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+
+// .filter runs on every element in array, makes new array AND RETURNS
+// get first name and last name for every person with shirt_size: "L"
+
+runnersLargeSizeShirt = runners.filter(function(runner) {
+  // console.log(`${runner.first_name} ${runner.last_name}`); test
+  // if (runner.shirt_size === "L") {console.log(runner)}; test
+  // if (runner.shirt_size === "L") {console.log(`${runner.first_name} ${runner.last_name}`)};
+  // if (runner.shirt_size === "L") {runnersLargeSizeShirt = `${runner.first_name} ${runner.last_name}`};
+  // return runnersLargeSizeShirt;
+  if (runner.shirt_size === "L") {return runner};
+})
+
 console.log(runnersLargeSizeShirt);
+
+// misread and spent too much time on this. I thought I needed to send back the first and
+// last names of the runner.
+
+//----------------------------------------------------------------------
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
