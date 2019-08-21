@@ -90,9 +90,22 @@ console.log(multiplyThese);
 //---------------------------------------------------------------------------------------
 
 function contains(item, list, cb) {
+  items.forEach(function(item) {
+    console.log(item);
+  })
+  
+// items.forEach() if item == 
+
+
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  // item = item from array,  list = array,  cb = true/false
 }
+
+
+//console.log(if TRUE, item is present)
+//console.log(if FALSE, that item is not present)
+
 
 /* STRETCH PROBLEM */
 
