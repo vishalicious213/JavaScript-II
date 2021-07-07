@@ -37,28 +37,83 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   const test2 = firstItem(items, logExorbitantPrice);
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
-
+//----------------------------------------------------------------------
 
 function getLength(arr, cb) {
+  return cb(arr.length);
   // getLength passes the length of the array into the callback.
 }
 
+const backPack = getLength(items, itemTotal => `There are ${itemTotal} school supplies`);
+
+console.log(backPack);
+
+// let testLength = function getLength(items, itemsLength) {
+//   console.log("hello");
+//   console.log(itemsLength);
+// };
+// console.log(testLength);
+
+//----------------------------------------------------------------------
+
 function last(arr, cb) {
+  return cb(arr[arr.length-1]);
   // last passes the last item of the array into the callback.
 }
 
+const lastItem = last(items, lastOne => `The last item is ${lastOne}`);
+
+console.log(lastItem);
+
+//----------------------------------------------------------------------
+
 function sumNums(x, y, cb) {
+  return cb(x+y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+const addThese = sumNums(1, 2, sum => `The sum is ${sum}`);
+
+console.log(addThese);
+
+//----------------------------------------------------------------------
+
 function multiplyNums(x, y, cb) {
+  return cb(x*y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
+const multiplyThese = multiplyNums(3, 6, prod => `The product is ${prod}`);
+
+console.log(multiplyThese);
+
+//----------------------------------------------------------------------
+
 function contains(item, list, cb) {
+  // v1
+  // items.forEach(function(item) {
+  //   console.log(item);
+  // })
+  // v2
+let returnItem = list.includes(item);
+  cb(returnItem);
+}
+  
+// items.forEach() if item == 
+const checkItem = (result) => {
+  console.log(result);
+};
+contains("Pencil", items, checkItem);
+
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  // item = item from array,  list = array,  cb = true/false
+
+
+//console.log(if TRUE, item is present)
+//console.log(if FALSE, that item is not present)
+
+//----------------------------------------------------------------------
 
 /* STRETCH PROBLEM */
 

@@ -4,6 +4,21 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function capsLock(lCase, text) {
+  console.log(lCase); // test
+  if (lCase = "upper") {
+    newText = text.toUpperCase();
+    console.log("111123"); //test
+  } else if
+      (lCase = "lower") {
+      newText = text.toLowerCase();
+      console.log("456"); //test
+    }
+  console.log(newText);
+}
+
+capsLock ("lower", "jeAAArhveorufhpwo");
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
